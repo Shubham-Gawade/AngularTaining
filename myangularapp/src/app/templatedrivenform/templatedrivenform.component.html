@@ -1,0 +1,61 @@
+<h3>Template Driven Form</h3>
+<form #registrationForm=ngForm (ngSubmit)="registerUser(registrationForm)">
+    <div>
+        <label>Name : </label>
+        <input 
+            type="text" 
+            name="uname" 
+            pattern="[a-zA-Z]*" 
+            required 
+            ngModel
+            #userName=ngModel>
+            <div *ngIf="userName.touched" style="color: red;">
+                <div *ngIf="userName.errors?.required">
+                    Name is required
+                </div>
+                <div *ngIf="userName.errors?.pattern">
+                    Name is invalid
+                </div>
+            </div>
+    </div>
+    <br>
+    <div>
+        <label>Contact : </label>
+        <input 
+            type="text" 
+            name="contactno" 
+            pattern="[789][0-9]{9}"
+            required 
+            ngModel
+            #contactno=ngModel>
+            <div *ngIf="contactno.touched" style="color: red;">
+                <div *ngIf="contactno.errors?.required">
+                    Contact No. is required
+                </div>
+                <div *ngIf="contactno.errors?.pattern">
+                    Contact No. is invalid
+                </div>
+            </div>
+    </div>
+    <br>
+    <div>
+        <label>Email : </label>
+        <input 
+            type="text" 
+            name="email" 
+            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+            required 
+            ngModel
+            #email=ngModel>
+            <div *ngIf="email.touched" style="color: red;">
+                <div *ngIf="email.errors?.required">
+                    Email is required
+                </div>
+                <div *ngIf="email.errors?.pattern">
+                    Email is invalid
+                </div>
+            </div>
+    </div>
+    <br>
+    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+</form>

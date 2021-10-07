@@ -1,0 +1,28 @@
+<!-- Interpolation -->
+
+<h1>Hello {{ username }}</h1>
+<h1>Hello {{ username.toUpperCase() }}</h1>
+<h2>2 + 2 = {{ 2+2 }}</h2>
+<!-- {{ greet() }} -->
+
+<p>----------------------------------</p>
+
+<!-- Property Binding -->
+
+<button [disabled]="isDisabled">Click</button>
+<br>
+<img [src]="imgURL" width="200" height="200" alt="nature">
+
+<p>----------------------------------</p>
+
+<!-- Event Binding -->
+
+<button (click)="displayMsg()">Click Here</button>
+
+<p>----------------------------------</p>
+
+<!-- Two way data binding -->
+
+<input type="text" name="firstname" [(ngModel)]=firstname>
+<br>
+The data entered in textfield is : {{ firstname }}

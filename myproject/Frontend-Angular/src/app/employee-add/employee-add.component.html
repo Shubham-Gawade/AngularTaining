@@ -1,0 +1,131 @@
+<div class="container">
+    <br>
+        <h3 style="text-align: center;">ADD Employee Form</h3>
+        <form [formGroup]="addEmployeeForm">
+            <div class="form-group row">
+                <div class="col">
+                    <label>Firstname : </label>
+                    <input type="text" class="form-control" formControlName="firstname" placeholder="First name">
+                    <div *ngIf="addForm.firstname.invalid && addForm.firstname.touched" style="color: red;">
+                        Firstname is required
+                    </div> 
+                </div>
+                <div class="col">
+                    <label>Lastname : </label>
+                    <input type="text" class="form-control" formControlName="lastname" placeholder="Last name">
+                    <div *ngIf="addForm.lastname.invalid && addForm.lastname.touched" style="color: red;">
+                        Lastname is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Photo URL : </label>
+                <input type="email" class="form-control" formControlName="photo" placeholder="Enter Your Photo URL">
+                <div *ngIf="addForm.photo.invalid && addForm.photo.touched" style="color: red;">
+                    Photo URl is required
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col">
+                    <label>Address : </label>
+                    <input type="text" class="form-control" formControlName="address" placeholder="Address">
+                    <div *ngIf="addForm.photo.invalid && addForm.photo.touched" style="color: red;">
+                        Photo URl is required
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Work Location : </label>
+                    <select class="form-select" formControlName="location">
+                        <option>Baner</option>
+                        <option>Hinjewadi</option>
+                        <option>Mumbai</option>
+                        <option>Banglore</option>
+                    </select>
+                    <div *ngIf="addForm.location.invalid && addForm.location.touched" style="color: red;">
+                        Location is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col">
+                    <label>Personal Email</label>
+                    <small style="margin-left: 5px;">(Note : Please provide your valid email for receving further details) :</small>
+                    <input type="text" class="form-control" formControlName="email" placeholder="Personal Email">
+                    <div *ngIf="addForm.email.invalid && addForm.email.touched" style="color: red;">
+                        Email is required
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Phone Number : </label>
+                    <input type="text" class="form-control" formControlName="phoneno" placeholder="Phone Number">
+                    <div *ngIf="addForm.phoneno.invalid && addForm.phoneno.touched" style="color: red;">
+                        Phone number is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col">
+                    <label>Designation : </label>
+                    <select class="form-select" formControlName="designation" name="designation" [ngModel]="selectedDesignation" (ngModelChange)="onChange($event)">
+                        <option *ngFor="let obj of salaries" [value]="obj.designation">{{obj.designation}}</option>
+                    </select>
+                    <div *ngIf="addForm.designation.invalid && addForm.designation.touched" style="color: red;">
+                        Designation is required
+                    </div>
+                </div>
+                <div class="col">
+                    <label>Salary : </label>
+                    <input type="text" class="form-control" formControlName="salary" placeholder="Salary">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col">
+                    <label>Joining Date :</label>
+                    <input type="date" class="form-control" formControlName="joiningdate">
+                </div>
+                <div class="col">
+                    <label>Date Of Birth :</label>
+                    <input type="date" class="form-control" formControlName="dateofbirth">
+                    <div *ngIf="addForm.dateofbirth.invalid && addForm.dateofbirth.touched" style="color: red;">
+                        Date Of Birth is required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col">
+                    <label>Age : </label>
+                    <input type="text" class="form-control" formControlName="age" placeholder="Age">
+                    <div *ngIf="addForm.age.invalid && addForm.age.touched" style="color: red;">
+                        Age is required
+                    </div>
+                </div>
+                <div class="col">
+                    <label style="margin-right: 10%; margin-top: 5%;">Gender :</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" formControlName="gender" name="gender" value="male">
+                        <label class="form-check-label" >Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" formControlName="gender" name="gender" value="female">
+                        <label class="form-check-label" >Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" formControlName="gender" name="gender" value="other">
+                        <label class="form-check-label" >Other</label>
+                    </div>
+                    <div *ngIf="addForm.gender.invalid && addForm.gender.touched" style="color: red;">
+                        Gender is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col">
+                    <button type="submit" style="margin-left: 90%;" (click)="submitForm()" [disabled]="!addEmployeeForm.valid" class="btn btn-success">Submit</button>
+                </div>
+                <div class="col">
+                    <button type="submit" style="margin-right: 45%;" (click)="cancelForm()" class="btn btn-primary">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>

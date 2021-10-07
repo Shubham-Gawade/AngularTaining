@@ -1,0 +1,37 @@
+<h3>Reactive Forms</h3>
+<form [formGroup]="loginForm">
+    <div>
+        <label>Username : </label>
+        <input
+            type="text" formControlName="uname">
+        <div>
+            <div *ngIf="aForm.uname.invalid && aForm.uname.touched">
+                Username is invalid
+            </div> 
+        </div>       
+    </div>
+    <br>
+    <div>
+        <label>Password : </label>
+        <input
+            type="text" formControlName="pword">
+            <div> 
+                <div *ngIf="aForm.pword.invalid && aForm.pword.touched">
+                    Password is invalid
+                </div> 
+            </div>   
+    </div>
+    <br>
+    <div>
+        <label>Confirm Password : </label>
+        <input
+            type="text" formControlName="confpword">
+            <div> 
+                <div *ngIf="aForm.pword.invalid && aForm.pword.touched">
+                    Password not Match
+                </div> 
+            </div>   
+    </div>
+    <br>
+    <button type="submit">Login</button>
+</form>

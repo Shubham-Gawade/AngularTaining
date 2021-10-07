@@ -1,0 +1,127 @@
+<div class="container" style="width: 60%;">
+    <br>
+    <div class="card mb-3">
+        <div class="row">
+            <div class="col">
+                <div class="row" style="margin: 4%;">
+                    <div class="col">
+                        <h5 for="name">Employee ID : </h5>
+                    </div>
+                    <div class="col">
+                        <h5 name="name">{{employee.employeeID}}</h5>
+                    </div>
+                </div>
+                <div class="row" style="margin: 4%;">
+                    <div class="col">
+                        <h5 for="name">Employee Name : </h5>
+                    </div>
+                    <div class="col">
+                        <h5 name="name">{{employee.firstname}} {{employee.lastname}}</h5>
+                    </div>
+                </div>
+                <div class="row" style="margin: 4%;">
+                    <div class="col">
+                        <h5 for="name">Address : </h5>
+                    </div>
+                    <div class="col">
+                        <h5 name="name">{{employee.address}}</h5>
+                    </div>
+                </div>
+                <div class="row" style="margin: 4%;">
+                    <div class="col">
+                        <h5 for="name">Work Location : </h5>
+                    </div>
+                    <div class="col">
+                        <h5 name="name">{{employee.location}}</h5>
+                    </div>
+                </div>
+           </div>
+            <div class="col">
+                <img class="photo-img" src={{employee.photo}}>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3">
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Company Email : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.companyEmail}}</h6>
+            </div>
+        </div>
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Personal Email : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.email}}</h6>
+            </div>
+        </div>
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Phone Number : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.phoneno}}</h6>
+            </div>
+        </div>
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Designation : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.designation}}</h6>
+            </div>
+        </div>
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Salary : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.salary}}</h6>
+            </div>
+        </div>
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Age : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.age}} years</h6>
+            </div>
+        </div>
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Date Of Birth : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.dateofbirth}}</h6>
+            </div>
+        </div>
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Gender : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.gender}}</h6>
+            </div>
+        </div>
+        <div class="row" style="margin: 1%;">
+            <div class="col" style="margin-left: 15%;">
+                <h6 for="name">Joinig Date : </h6>
+            </div>
+            <div class="col" style="margin-right: 20%;">
+                <h6 name="name">{{employee.joiningdate}}</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-warning" style="margin-left: 80%;" (click)="editEmployee()">Edit</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-danger" style="margin-right: 10px;" (click)="deleteEmployee()">Delete</button>
+            </div>
+        </div>
+        <br>
+    </div>
+</div>

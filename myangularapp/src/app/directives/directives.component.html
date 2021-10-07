@@ -1,0 +1,48 @@
+<!-- Structurel Directive -->
+
+<!-- ngIf Directive -->
+<div *ngIf="flag">
+    {{ message }}
+</div>
+
+<div *ngIf="flag, else nomsg">
+    {{ message }}
+</div>
+<ng-template #nomsg>
+    Nothing to display
+</ng-template>
+
+<!-- ngFor Directive -->
+<div>
+    Months:
+    <select>
+        <option *ngFor="let month of months">{{month}}</option>
+    </select>
+</div>
+
+<!-- ngSwitch Directive -->
+<div *ngFor="let num of numbers">
+    <div ngSwitch="{{ num % 2 }}">
+        <div *ngSwitchCase="0">{{ num }} is Even</div>
+        <div *ngSwitchCase="1">{{ num }} is Odd</div>
+        <div *ngSwitchDefault>Default Condition</div>
+    </div>
+</div>
+
+<!-- Attribute Directive -->
+
+<!-- ngStyle Directive : adds and removes a set of HTML styles-->
+<h3 [ngStyle]="{'background-color': country === true ? 'orange' : 'blue' }">INDIA</h3>
+
+<h3 [ngStyle]="{'background-color':'green'}">Style Directive</h3>
+
+<h3 [style.color]="'red'">Shubham</h3>
+
+<!-- ngClass Directive : adds and removes a set of CSS classes -->
+<!-- [class.my_class] = "step === 'step1'"
+
+[ngClass]="{'my_class': step === 'step1'}" -->
+
+<!-- Custom directive -->
+<p>This is a paragraph</p>
+<p appCustom="blue">This is howered paragraph</p>

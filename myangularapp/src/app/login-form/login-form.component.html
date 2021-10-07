@@ -1,0 +1,7 @@
+<form (change)="submit()">
+    Username : <input type="text" name="username" [(ngModel)]=username>
+    <br>
+    Password : <input type="password" name="password" [(ngModel)]=password>
+    <br>
+    <button [disabled]="isEmpty">Submit</button>
+</form>

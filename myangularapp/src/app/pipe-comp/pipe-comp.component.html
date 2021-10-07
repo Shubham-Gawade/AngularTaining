@@ -1,0 +1,22 @@
+<h3>{{ title | uppercase }}</h3>
+
+<h3>{{ title | lowercase }}</h3>
+
+<h3>{{ today }}</h3>
+<h3>{{ today | date:'d/M/y' }}</h3>
+<h3>{{ today | date:'d MMM y' | uppercase }}</h3>
+<h3>{{ today | date:'shortTime' }}</h3>
+<h3>{{ today | date:'hh : mm : ss' }}</h3>
+<h3>{{ today | date:'EEE'}}</h3>
+
+<h3>{{ jsonval | json }}</h3>
+
+<h3>{{ months | slice:2:5 }}</h3>
+
+<h3>{{ 123.43345367 | number:'3.4-4' }}</h3>
+<!-- digits before decimal . minimum digits - maximum digits -->
+
+<!-- Custome Pipes -->
+<div *ngFor="let number of numbers">
+    <h3>Square of {{number}} is {{ number | custom}}</h3>
+</div>
